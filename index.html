@@ -5,6 +5,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
       
         <!-- Bootstrap  -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -183,12 +184,7 @@
                     }
                 },
                 error: function(response){
-                  successToastElm.show();
-                        var userInfo = document.getElementById("successToastDataBody");
-                        userInfo.innerHTML = "Name: " + "result.FirstName" + " " + "result.LastName" + "<br />" 
-                                             + "Company: " + "result.CompanyID "+ "<br />"
-                                             + "Phone Number: " + "result.Mobile "+ "<br />";
-                        successToastDataElm.show();
+                  errorToastElm.show();
                 }
               });
               return false;
